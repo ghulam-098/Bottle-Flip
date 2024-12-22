@@ -1,0 +1,50 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #4c79ff, #7ae7ff);
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding: 20px;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-top: 20px;
+}
+
+.bottle img {
+  width: 150px;
+  height: auto;
+  margin: 20px 0;
+  animation: idle 1s infinite alternate;
+}
+
+@keyframes idle {
+  transform: translateY(-5px);
+}
+
+button {
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #ffffff;
+  color: #4c79ff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #e6e6e6;
+}
+
+#result {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  font-weight: bold;
+}
