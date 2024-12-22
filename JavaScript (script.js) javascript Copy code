@@ -1,0 +1,31 @@
+const flipButton = document.getElementById('flipButton');
+const result = document.getElementById('result');
+const bottle = document.getElementById('bottle');
+
+flipButton.addEventListener('click', () => {
+  // Randomize the flip outcome
+  const flipResult = Math.random() > 0.5 ? 'success' : 'fail';
+
+  // Trigger bottle flip animation
+  bottle.style.animation = 'flip 0.6s ease-in-out';
+
+  // Reset animation after the flip
+  setTimeout(() => {
+    bottle.style.animation = 'idle 1s infinite alternate';
+  }, 600);
+
+  // Display the result
+  result.textContent = flipResult === 'success' 
+    ? '🎉 You landed it! Great job!' 
+    : '😢 Oops! Try again.';
+});
+
+// Add keyframes for bottle flip animation
+const styleSheet = document.styleSheets[0];
+styleSheet.insertRule(`
+  @keyframes flip {
+    0% { transform: rotate(0); }
+    50% { transform: rotate(720deg); }
+    100% { transform: rotate(0); }
+  }
+`, styleSheet.cssRules.length);
